@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Assignment #: Homework 04
+    File Name: AndroidManifest.xml
+    Group Members: Brian Bystrom, Mohamed Salad
+-->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mohamed.hw4">
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
@@ -15,9 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StatsActivity">
+        <activity android:name=".StatsActivity"
+            android:label="Trivia Stats">
         </activity>
-        <activity android:name=".TriviaActivity">
+        <activity android:name=".TriviaActivity"
+            android:label="Trivia">
         </activity>
     </application>
 

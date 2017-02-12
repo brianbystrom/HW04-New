@@ -1,3 +1,9 @@
+/*
+Assignment #: Homework 04
+File Name: GetQuestionsAsyncTask.java
+Group Members: Brian Bystrom, Mohamed Salad
+*/
+
 package com.example.mohamed.hw4;
 
 import android.app.ProgressDialog;
@@ -21,7 +27,6 @@ import java.util.ArrayList;
 public class GetQuestionsAsyncTask extends AsyncTask<String,Void, ArrayList<Questions>> {
 
     ICommunicateWithAsync mContext;
-    ProgressDialog progressDialog;
 
     public GetQuestionsAsyncTask(ICommunicateWithAsync context) {
         this.mContext = context;
@@ -30,16 +35,12 @@ public class GetQuestionsAsyncTask extends AsyncTask<String,Void, ArrayList<Ques
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
-        progressDialog = new ProgressDialog(mContext.getContext());
 
-        progressDialog.setMessage("Loading Trivia...");
-        progressDialog.show();
     }
 
     @Override
     protected void onPostExecute(ArrayList<Questions> s) {
         super.onPostExecute(s);
-        progressDialog.dismiss();
         mContext.sendData(s);
 
     }

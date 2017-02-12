@@ -1,3 +1,9 @@
+/*
+Assignment #: Homework 04
+File Name: TriviaActivity.java
+Group Members: Brian Bystrom, Mohamed Salad
+*/
+
 package com.example.mohamed.hw4;
 
 import android.app.ProgressDialog;
@@ -33,13 +39,16 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
     TextView timer;
     ImageView questionImage;
     TextView question;
-    //RadioGroup rdGrpOptions;
     ScrollView choicesView;
     Button prev;
     Button next;
     TextView noImageLabel;
-    int tempAnswer;
-    //LinearLayout ll;
+    int tempAnswer = 1;
+    int choiceCounter = 0;
+    int tempSize = 0;
+    int userAnswer;
+    CountDownTimer quizTimer;
+    ImageDownloadTask imageGet;
 
 
     @Override
@@ -63,12 +72,31 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             @Override
             public void onClick(View v) {
                 if (questionIndex < questionList.size() - 1) {
+
+
+                    RadioGroup tempGroup = (RadioGroup) findViewById(0);
+                    int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
+                    if (tempAnswer > -1) {
+                        tempAnswer = tempAnswer - choiceCounter;
+                        questionList.get(questionIndex).setUserAnswer(tempAnswer);
+
+                    }
+                    choiceCounter += tempSize;
+
                     questionIndex++;
-                    //RadioGroup tempGroup = (RadioGroup) findViewById(0);
-                    //int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
-                    //Log.d("DEMO", tempAnswer + " ANSWER");
+                    imageGet.cancel(true);
                     showQuestion(v);
                 } else {
+                    RadioGroup tempGroup = (RadioGroup) findViewById(0);
+                    int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
+                    if (tempAnswer > -1) {
+                        tempAnswer = tempAnswer - choiceCounter;
+                        questionList.get(questionIndex).setUserAnswer(tempAnswer);
+
+                    }
+                    choiceCounter += tempSize;
+
+                    questionIndex++;
                     finishGame(v);
                 }
             }
@@ -78,10 +106,21 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             @Override
             public void onClick(View v) {
                 if (questionIndex > 0) {
-                    questionIndex--;
+
+
                     RadioGroup tempGroup = (RadioGroup) findViewById(0);
                     int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
-                    Log.d("DEMO", tempAnswer + " ANSWER");
+
+
+                    if (tempAnswer > -1) {
+                        tempAnswer = tempAnswer - choiceCounter;
+                        questionList.get(questionIndex).setUserAnswer(tempAnswer);
+
+                    }
+
+                    choiceCounter += tempSize;
+                    questionIndex--;
+                    imageGet.cancel(true);
                     showQuestion(v);
                 } else {
                     Toast.makeText(TriviaActivity.this, "You are already at the first question.", Toast.LENGTH_SHORT).show();
@@ -93,72 +132,80 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
 
         if (getIntent().getExtras() != null) {
             questionList = (ArrayList<Questions>) getIntent().getExtras().getSerializable("QUESTION");
-            //Log.d("blah",questionList.size()+"");
+
+            txtViewQuestionNo = (TextView) findViewById(R.id.text_view_question_no);
+            timer = (TextView) findViewById(R.id.text_view_time_left);
+            questionImage = (ImageView) findViewById(R.id.question_image);
+            question = (TextView) findViewById(R.id.question);
+            RadioGroup rdGrpOptions = new RadioGroup(TriviaActivity.this);
+            rdGrpOptions.setId(0);
+            prev = (Button) findViewById(R.id.button_prev);
+            next = (Button) findViewById(R.id.button_next);
+            progressDialog = new ProgressDialog(this);
+
+            txtViewQuestionNo.setText(getResources().getString(R.string.text_view_question_no, questionIndex + 1));
+
+            question.setText(questionList.get(questionIndex).getText());
+
+            if(questionList.get(questionIndex).getImageUrl() == null){
+
+            }else{
+                imageGet = new ImageDownloadTask(TriviaActivity.this);
+                imageGet.execute(questionList.get(questionIndex).getImageUrl());
+            }
+
+            ArrayList<String> choiceList = new ArrayList<String>();
+            choiceList = questionList.get(questionIndex).getChoices();
+            tempSize = choiceList.size();
+
+            LinearLayout ll = new LinearLayout(TriviaActivity.this);
+            ll.setOrientation(LinearLayout.VERTICAL);
+            ll.removeAllViews();
+            rdGrpOptions.removeAllViews();
+
+            for(int i = 0; i<choiceList.size(); i++){
+                RadioButton rdBtnOption = new RadioButton(TriviaActivity.this);
+                rdBtnOption.setText(choiceList.get(i).toString());
+                rdGrpOptions.addView(rdBtnOption);
+            }
+
+            ll.addView(rdGrpOptions);
+            choicesView.addView(ll);
+
+
+            quizTimer = new CountDownTimer(120000, 1000) {
+
+                public void onTick(long millisUntilFinished) {
+                    timer.setText(getResources().getString(R.string.text_view_time_left, millisUntilFinished/1000));
+                }
+
+                public void onFinish() {
+                    Intent intent = new Intent(TriviaActivity.this, StatsActivity.class);
+
+                    intent.putExtra("QUESTION", questionList);
+                    startActivityForResult(intent, 200);
+                }
+
+
+            }.start();
         } else {
 
         }
 
-        txtViewQuestionNo = (TextView) findViewById(R.id.text_view_question_no);
-        timer = (TextView) findViewById(R.id.text_view_time_left);
-        questionImage = (ImageView) findViewById(R.id.question_image);
-        question = (TextView) findViewById(R.id.question);
-        RadioGroup rdGrpOptions = new RadioGroup(TriviaActivity.this);
-        //rdGrpOptions.setId(0);
-        prev = (Button) findViewById(R.id.button_prev);
-        next = (Button) findViewById(R.id.button_next);
-        progressDialog = new ProgressDialog(this);
-
-        txtViewQuestionNo.setText(getResources().getString(R.string.text_view_question_no, questionIndex + 1));
-
-        question.setText(questionList.get(questionIndex).getText());
-
-        //rdGrpOptions
-
-        if(questionList.get(questionIndex).getImageUrl() == null){
-
-        }else{
-            new ImageDownloadTask(TriviaActivity.this).execute(questionList.get(questionIndex).getImageUrl());
-            //questionImage.setImageBitmap(image);
-        }
-
-        ArrayList<String> choiceList = new ArrayList<String>();
-        choiceList = questionList.get(questionIndex).getChoices();
-
-        LinearLayout ll = new LinearLayout(TriviaActivity.this);
-        ll.setOrientation(LinearLayout.VERTICAL);
-        ll.removeAllViews();
-        rdGrpOptions.removeAllViews();
-
-
-
-        for(int i = 0; i<choiceList.size(); i++){
-            RadioButton rdBtnOption = new RadioButton(TriviaActivity.this);
-            rdBtnOption.setText(choiceList.get(i).toString());
-            rdGrpOptions.addView(rdBtnOption);
-            //ll.addView(rdBtnOption);
-        }
-
-        ll.addView(rdGrpOptions);
-        choicesView.addView(ll);
-
-        new CountDownTimer(120000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                timer.setText(getResources().getString(R.string.text_view_time_left, millisUntilFinished));
-            }
-
-            public void onFinish() {
-                Intent intent = new Intent(TriviaActivity.this, StatsActivity.class);
-                //pass data?
-                startActivity(intent);
-            }
-
-
-        }.start();
-
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 200) {
+            if(resultCode == RESULT_OK) {
+                Intent done = new Intent();
+                setResult(RESULT_OK);
+                TriviaActivity.this.finish();
+            } else {
+                Toast.makeText(TriviaActivity.this, "Unable to edit movie.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 
     @Override
@@ -173,14 +220,14 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
 
     @Override
     public void startProgress() {
-        //progressDialog.setMessage("Loading Image...");
-        //progressDialog.show();
+
     }
 
     @Override
     public void stopProgress() {
-        progressDialog.dismiss();
+
     }
+
 
     public void showQuestion(View view) {
 
@@ -195,6 +242,8 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
         } else {
             next.setText("Next");
         }
+
+        userAnswer = questionList.get(questionIndex).getUserAnswer();
         //if (questionIndex < questionList.size()){
 
             questionImage.setVisibility(GONE);
@@ -208,8 +257,8 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
                 noImageLabel.setVisibility(VISIBLE);
 
             }else{
-                new ImageDownloadTask(TriviaActivity.this).execute(questionList.get(questionIndex).getImageUrl());
-                //questionImage.setImageBitmap(image);
+                imageGet = new ImageDownloadTask(TriviaActivity.this);
+                imageGet.execute(questionList.get(questionIndex).getImageUrl());
             }
 
             txtViewQuestionNo.setText(getResources().getString(R.string.text_view_question_no, questionIndex + 1));
@@ -218,66 +267,45 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             choicesView.removeAllViews();
 
 
-            /*if(questionList.get(questionIndex++).getImageUrl() == null){
-
-            }else{
-                new ImageDownloadTask(TriviaActivity.this).execute((Runnable) questionList.get(questionIndex));
-                //questionImage.setImageBitmap(image);
-            }*/
-
             ArrayList<String> choiceList = new ArrayList<String>();
             choiceList = questionList.get(questionIndex).getChoices();
             RadioGroup rdGrpOptions = (RadioGroup) new RadioGroup(TriviaActivity.this);
             rdGrpOptions.setId(0);
-
             LinearLayout ll = new LinearLayout(TriviaActivity.this);
             ll.setOrientation(LinearLayout.VERTICAL);
             ll.removeAllViews();
             rdGrpOptions.removeAllViews();
 
+        tempSize = choiceList.size();
 
 
-            for(int i = 0; i<choiceList.size(); i++){
+
+
+        for(int i = 0; i<choiceList.size(); i++){
                 RadioButton rdBtnOption = new RadioButton(TriviaActivity.this);
                 rdBtnOption.setText(choiceList.get(i).toString());
-                rdGrpOptions.addView(rdBtnOption);
-                //ll.addView(rdBtnOption);
+
+
+            if(i == userAnswer - 1) {
+                rdBtnOption.setChecked(true);
             }
+            rdGrpOptions.addView(rdBtnOption);
+        }
 
             ll.addView(rdGrpOptions);
             choicesView.addView(ll);
 
-
-            /*new CountDownTimer(120000, 1000) {
-
-                public void onTick(long millisUntilFinished) {
-                    timer.setText(getResources().getString(R.string.text_view_time_left, millisUntilFinished));
-                }
-
-                public void onFinish() {
-                    Intent intent = new Intent(TriviaActivity.this, StatsActivity.class);
-                    //pass data?
-                    startActivity(intent);
-                }
-
-
-            }.start();*/
-
-        //}
-
-
     }
 
     public void finishGame(View view) {
+        quizTimer.cancel();
         Intent intent = new Intent(TriviaActivity.this, StatsActivity.class);
-        /*for(int i = 0; i < questionList.size(); i++) {
-            Log.d("DEMO", questionList.toString());
-        }*/
         intent.putExtra("QUESTION", questionList);
-        startActivity(intent);
+        startActivityForResult(intent, 200);
     }
 
     public void quitGame(View view) {
+
         TriviaActivity.this.finish();
     }
 }

@@ -1,3 +1,9 @@
+/*
+Assignment #: Homework 04
+File Name: ImageDownloadTask.java
+Group Members: Brian Bystrom, Mohamed Salad
+*/
+
 package com.example.mohamed.hw4;
 
 import android.graphics.Bitmap;
@@ -32,6 +38,7 @@ public class ImageDownloadTask extends AsyncTask<String, Void, Bitmap> {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 

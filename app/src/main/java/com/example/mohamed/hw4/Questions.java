@@ -1,3 +1,9 @@
+/*
+Assignment #: Homework 04
+File Name: Questions.java
+Group Members: Brian Bystrom, Mohamed Salad
+*/
+
 package com.example.mohamed.hw4;
 
 import org.json.JSONException;
@@ -23,31 +29,17 @@ public  class Questions implements Serializable {
         this.userAnswer = userAnswer;
     }
 
-
-
-    //static public Questions createQuestions(JSONObject js) throws JSONException {
-        //Questions questions = new Questions();
-        //questions.setId(js.getInt("id"));
-        //questions.setText(js.getString("text"));
-        //Create setChoices method
-        //questions.setChoices(js.getString("choices"));
-        /*if (js.has("image")) {
-            questions.setImageUrl(js.getString("image"));
-        }*/
-
-        //return questions;
-
-
-    //  private void setChoices(Object choices) {
-    //    ArrayList<RadioButton> radioButtons = new ArrayList<RadioButton>();
-
-    //  for(int i =0; i < 5; i++){
-    //    RadioButton button = new RadioButton()
-    //  radioButtons.add(button);
-    //}
-    //}
-
-
+    @Override
+    public String toString() {
+        return "Questions{" +
+                "text='" + text + '\'' +
+                ", image='" + image + '\'' +
+                ", choices=" + choices +
+                ", id=" + id +
+                ", answer=" + answer +
+                ", userAnswer=" + userAnswer +
+                '}';
+    }
 
     public String getText() {
         return text;
@@ -63,17 +55,6 @@ public  class Questions implements Serializable {
 
     public void setImageUrl(String image) {
         this.image = image;
-    }
-
-    @Override
-    public String toString() {
-        return "Data{" +
-                "text='" + text + '\'' +
-                ", image='" + image + '\'' +
-                ", choices=" + choices +
-                ", id=" + id +
-                ", answer=" + answer +
-                '}';
     }
 
     public ArrayList<String> getChoices() {

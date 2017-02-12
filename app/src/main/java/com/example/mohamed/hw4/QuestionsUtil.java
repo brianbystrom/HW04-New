@@ -1,3 +1,9 @@
+/*
+Assignment #: Homework 04
+File Name: QuestionsUtil.java
+Group Members: Brian Bystrom, Mohamed Salad
+*/
+
 package com.example.mohamed.hw4;
 
 import android.util.Log;

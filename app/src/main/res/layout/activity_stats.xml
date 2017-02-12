@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Assignment #: Homework 04
+    File Name: activity_stats.xml
+    Group Members: Brian Bystrom, Mohamed Salad
+-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_stats"
@@ -13,62 +20,69 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/trivia_stats"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:id="@+id/stats_title"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/correct_label"
         android:id="@+id/textView_correct"
         android:layout_below="@+id/stats_title"
         android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView_percent"
-        android:layout_below="@+id/textView_correct"
-        android:layout_marginTop="20dp"/>
-
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:id="@+id/progress_bar_correct_percent"
-        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView_tryAgain"
-        android:layout_below="@+id/textView_correct"
-        android:layout_marginTop="20dp"/>
+        android:layout_alignBottom="@+id/correct_progressbar"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/percent_correct_label" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/Linear1"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/stats_title">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/quit"
-            android:id="@+id/button_stats_quit"
-            android:layout_marginRight="150dp"
-            android:onClick="quitGame"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tryAgain_Label"
-            android:onClick="tryAgainAction"/>
     </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finish_btn"
+        android:id="@+id/button_stats_finish"
+        android:layout_marginRight="150dp"
+        android:onClick="quitGame"
+        android:layout_above="@+id/Linear1"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/answers_scrollview"
+        android:layout_below="@+id/textView_correct"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="13dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_height="wrap_content"
+        android:id="@+id/correct_progressbar"
+        android:layout_width="275dp"
+        android:layout_below="@+id/answers_scrollview"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/textView_percent"
+        android:layout_below="@+id/answers_scrollview"
+        android:layout_toRightOf="@+id/correct_progressbar" />
 
 
 </RelativeLayout>
