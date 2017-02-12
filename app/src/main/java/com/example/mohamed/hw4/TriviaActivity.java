@@ -33,12 +33,12 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
     TextView timer;
     ImageView questionImage;
     TextView question;
-    RadioGroup rdGrpOptions;
+    //RadioGroup rdGrpOptions;
     ScrollView choicesView;
     Button prev;
     Button next;
     TextView noImageLabel;
-    LinearLayout ll;
+    //LinearLayout ll;
 
 
     @Override
@@ -63,6 +63,7 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             public void onClick(View v) {
                 if (questionIndex < questionList.size() - 1) {
                     questionIndex++;
+                    //int tempAnswer = (Integer) findViewById(0);
                     showQuestion(v);
                 } else {
                     finishGame(v);
@@ -95,7 +96,8 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
         timer = (TextView) findViewById(R.id.text_view_time_left);
         questionImage = (ImageView) findViewById(R.id.question_image);
         question = (TextView) findViewById(R.id.question);
-        rdGrpOptions = new RadioGroup(TriviaActivity.this);
+        RadioGroup rdGrpOptions = new RadioGroup(TriviaActivity.this);
+        rdGrpOptions.setId(0);
         prev = (Button) findViewById(R.id.button_prev);
         next = (Button) findViewById(R.id.button_next);
         progressDialog = new ProgressDialog(this);
@@ -218,8 +220,10 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
 
             ArrayList<String> choiceList = new ArrayList<String>();
             choiceList = questionList.get(questionIndex).getChoices();
+            RadioGroup rdGrpOptions = (RadioGroup) new RadioGroup(TriviaActivity.this);
+            rdGrpOptions.setId(0);
 
-            ll = new LinearLayout(TriviaActivity.this);
+            LinearLayout ll = new LinearLayout(TriviaActivity.this);
             ll.setOrientation(LinearLayout.VERTICAL);
             ll.removeAllViews();
             rdGrpOptions.removeAllViews();
