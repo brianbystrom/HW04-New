@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.1_2d4027936f3d87584be953376a3e850287d553bd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_15fa160246685397b4f65a19e7c80608e0f952c9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_0405417ecc96b2e04a80c17cfded3ac00ed98a85/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.1.1/support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.1_bae8e0c82e7fe63c695e0a6aa1fe08acf53c236d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.1_9530f84a730674e404171e403bd8f7218b066404/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.1_f846b927c976d5fdb667c904c0191a4ede2d7385/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.1_c9717803a5f44f0956329557cf9700e2b2fe5d65/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_0104f83646126b65cb162fcd214ea9cd35855bee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.1_7f62bcf7a34b2ea8e43e4b9f43feb79835238278/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.1_e92b75165ba59c9125ba1eb1088361085861a266/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a80348c3d75eb371c1447a4e79a629b52ae8990b">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_05f3a068b39a1252545e159a23ac5c7e4d7fd4eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_3317ab5ffb32e7eb677207e6d98174c28e370eef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.1_9f00f4cca1960a933f3b67231f286c269b45b281/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ac17a5d64d2d348a9a7692a61acc693549eef5d1">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_26a1c1b25aea3d4a653592f90c0b5d7a657b4721/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.1_1d1c1e33055361097445fad2fbaadd8d4901c914/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.1_db28afa5f5affc56d20cbe221910b8d83086855d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.1_b9202e13c551b1947aef2123bfcf153dea9b23d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d968c9c3a066eeb4cc694bdc106d60fe107876ac">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_0d05de7f127ed40524b02c8f7905c0400b24fd79/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.1_82e612a99b4634bb220e075c8c9b9d78b60daef2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8d45a0991145d025ca3be51ca4aae323deeb192a">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_bfb40851d78a5d8f21981f4d8df541fe652f91ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.1_11debbbf5d8382e113e62369931a4e5c6c658286/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW04 New/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.1_b0f7b396c7305d42e96502bc11967c25b9ce49f2/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
+        <dex dex="/Users/brianbystrom/Desktop/ITIS 4180/HW4/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.1_28fd33c56a17f55c29317839e5f6f0af65296898/classes.dex" />
+    </item>
+
+</items>

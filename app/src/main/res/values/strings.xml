@@ -1,0 +1,22 @@
+<resources>
+    <string name="title">Welcome to Trivia App</string>
+    <string name="ready">Trivia Ready</string>
+    <string name="exit">Exit</string>
+    <string name="start">Start</string>
+    <string name="quit">Quit</string>
+    <string name="next">Next</string>
+    <string name="trivia_stats">Trivia Stats</string>
+    <string name="correct_label">Correct Answers</string>
+    <string name="tryAgain_Label">Try Again</string>
+    <string name="text_view_question_no">Q%d</string>
+    <string name="text_view_time_left">Time left: %d seconds</string>
+    <string name="app_name">Trivia App</string>
+    <string name="welcome_header">Welcome to Trivia App</string>
+    <string name="exit_btn">Exit</string>
+    <string name="start_btn">Start Trivia</string>
+    <string name="loading_trivia_label">Loading Trivia</string>
+    <string name="trivia_ready_label">Trivia Ready</string>
+    <string name="image_load_label">Loading Image...</string>
+    <string name="no_image_label">No image to display...</string>
+    <string name="prev_btn">Previous</string>
+</resources>
