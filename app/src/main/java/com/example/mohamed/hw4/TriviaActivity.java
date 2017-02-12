@@ -38,6 +38,7 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
     Button prev;
     Button next;
     TextView noImageLabel;
+    int tempAnswer;
     //LinearLayout ll;
 
 
@@ -63,7 +64,9 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             public void onClick(View v) {
                 if (questionIndex < questionList.size() - 1) {
                     questionIndex++;
-                    //int tempAnswer = (Integer) findViewById(0);
+                    //RadioGroup tempGroup = (RadioGroup) findViewById(0);
+                    //int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
+                    //Log.d("DEMO", tempAnswer + " ANSWER");
                     showQuestion(v);
                 } else {
                     finishGame(v);
@@ -76,6 +79,9 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
             public void onClick(View v) {
                 if (questionIndex > 0) {
                     questionIndex--;
+                    RadioGroup tempGroup = (RadioGroup) findViewById(0);
+                    int tempAnswer = (Integer) tempGroup.getCheckedRadioButtonId();
+                    Log.d("DEMO", tempAnswer + " ANSWER");
                     showQuestion(v);
                 } else {
                     Toast.makeText(TriviaActivity.this, "You are already at the first question.", Toast.LENGTH_SHORT).show();
@@ -97,7 +103,7 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
         questionImage = (ImageView) findViewById(R.id.question_image);
         question = (TextView) findViewById(R.id.question);
         RadioGroup rdGrpOptions = new RadioGroup(TriviaActivity.this);
-        rdGrpOptions.setId(0);
+        //rdGrpOptions.setId(0);
         prev = (Button) findViewById(R.id.button_prev);
         next = (Button) findViewById(R.id.button_next);
         progressDialog = new ProgressDialog(this);
@@ -106,6 +112,7 @@ public class TriviaActivity extends AppCompatActivity implements ImageDownloadTa
 
         question.setText(questionList.get(questionIndex).getText());
 
+        //rdGrpOptions
 
         if(questionList.get(questionIndex).getImageUrl() == null){
 
